@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div id="wrap">
+  <head>
+    <title>Winterest</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav-bar.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/grid.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/profile.css" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/styles/grid-labs.css" type="text/css" /> -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/grid-render.js"></script>
+    <script type="text/javascript" src="/scripts/grid.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+<header><% include partials/_header.ejs %></header>
+
+<body>
+<div class="container">
+    <form id="contact" action="/profile" method="post">
+        <div class="row login_box">
+            <div class="col-md-12 col-xs-12" align="center">
+              <div class="outter"><img src="<%=userInfo.profile_picture%>" class="image-circle" /></div>
+              <h1>Hello <%= user %></h1>
+              <h3>Email: <%= userInfo.email %></h3>
+            </div>
+
+      <fieldset>
+        <input placeholder= '<%=userInfo.email %>' name="email" type="email" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder='Password' name="password"type="password" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder='<%=userInfo.profile_picture%>' name="profile_picture" type="url" tabindex="3" required>
+      </fieldset>
+
+      <fieldset>
+        <button type="submit" id="contact-submit">Update</button>
+      </fieldset>
+      </form>
+    </form>
+  </div>
+</body>
+</div>
+</html>

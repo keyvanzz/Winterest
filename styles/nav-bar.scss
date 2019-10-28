@@ -1,0 +1,61 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-bottom: 1px black solid;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white !important;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  text-decoration: none;
+}
+
+li a:visited {
+  text-decoration: none;
+}
+
+#btn-search:visited {
+  text-decoration: none;
+}
+#btn-search:hover {
+  text-decoration: none;
+}
+.active:hover {
+  background-color: lightslategray;
+}
+.active {
+  background-color: lightsteelblue;
+}
+
+.active2:hover{
+  background-color: salmon;
+}
+.active2 {
+  background-color: lightsalmon;
+}
+
+.drop-filter {
+  padding: inherit 0;
+}
+
+.filter {
+  padding-top: 3%;
+}
+
+.filter li {
+  background-color: black;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div id="wrap">
+    <head>
+        <title>Winterest</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+        <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/nav-bar.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/grid.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/addArticle.css" type="text/css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="/styles/grid-labs.css" type="text/css" /> -->
+        <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+        <script type="text/javascript" src="/scripts/app.js"></script>
+        <script type="text/javascript" src="/scripts/grid-render.js"></script>
+        <script type="text/javascript" src="/scripts/grid.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      </head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <header>
+      <nav class="navbar-fixed-top">
+        <ul>
+          <li><a class="nav-a" href="/">Home</a></li>
+        <div class="sign">
+          <% if(!locals.user){ %>
+            <li style="float:right"><a class="active2" class="login" href="/login"">Login/Register</a></li>
+          <% } else { %>
+            <li><a href="/my-articles">My Articles</a></li>
+            <li><a href="/newArticles">Add Articles</a></li>
+            <li style="float:right"><a href="/profile">Profile</a></li>
+            <li style="float:right">
+              <form method='POST' action='/logout' id='logout'>
+              <input type="submit" class="active" value="Logout" class="btn btn-primary"></input>
+              </form>
+            </li>
+    <!-- <a class="active" class="logout" href="#" method="POST" action='/logout'>Logout</a> -->
+          <% } %>
+        </div>
+        </ul>
+      </nav>
+    </header>
+
+<body>
+    <div class="container">
+
+
+        <form id="contact" action="/newArticles" method="post">
+          <div class="row login_box">
+              <!-- <div class="col-md-12 col-xs-12" align="center"> -->
+          <h3>Article Submission Form</h3>
+          <fieldset>
+            <input placeholder="Title" name="title" type="text" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Article Thumbnail URL" type="text" name="thumbnail"tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Article URL" type="text" name="url" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+              <select id="new-article-form__category" name="topic" data-category-selected="CA">
+                  <option value="Food">Food</option>
+                  <option value="Household">Household</option>
+                  <option value="Animals">Animals</option>
+                  <option value="Outdoors">Outdoors</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Workplace">Workplace</option>
+                  <option value="Fitness">Fitness</option>
+              </select>
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Description"  name="description" tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <button type="submit" id="contact-submit">Create</button>
+        </form>
+      </div>
+</body>
+</div>
+</html>
+
+
+

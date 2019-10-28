@@ -1,0 +1,21 @@
+.new-article-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: auto;
+}
+
+.new-article-form__field-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.new-article-form label {
+  display: none;
+}
+
+.new-article-form textarea, .new-article-form select, .new-article-form input, .new-article-form label {
+  margin: 5px 5px;
+  width: 100%;
+}

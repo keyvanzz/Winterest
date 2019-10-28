@@ -1,0 +1,76 @@
+.review{
+  border: black solid 2px;
+  margin-bottom: 2%;
+  padding: 2% 0;
+}
+
+.review:hover {
+  box-shadow: 5px 5px 5px #888;
+}
+
+.review-img{
+  float: left;
+  width: 110px;
+  margin-left: 1%;
+  border-radius: 50%;
+}
+
+.review-username {
+  margin-left: 2%;
+  margin-top: 2.5%;
+  float: left;
+}
+
+.review:hover .review-username{
+  font-weight: bold;
+}
+
+.review-userHandle {
+  float: right;
+  margin-top: 2.5%;
+  padding-right:2%;
+  opacity: 0;
+}
+
+.review:hover .review-userHandle{
+  opacity: 100;
+}
+
+.review-body{
+  border-bottom: 2px solid rgb(84,81,108);
+  width: 96%;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+  clear: left;
+  display: block;
+}
+
+.review:hover .review-body{
+  font-weight: bold;
+}
+
+.review-timestamp {
+  margin-left: 2%;
+  margin-bottom: 0;
+  font-size: medium;
+  display: inline-block;
+}
+
+.review-icons {
+  float: right;
+  margin-top: 2%;
+  margin-right: 2%;
+  opacity: 0;
+}
+
+.review:hover .review-icons{
+  opacity: 100;
+}
+
+.review-icon {
+  width: 25px;
+}

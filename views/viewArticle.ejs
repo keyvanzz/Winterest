@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<div id="wrap">
+<head>
+    <title>View Article</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav-bar.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/grid.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/viewArticle.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/articleReviews.css" type="text/css" />
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/viewArticle.js"></script>
+
+</head>
+<header><% include partials/_header.ejs %></header>
+<body class="body">
+  <div class="view-wrap">
+    <article class="article">
+        <div class="article__title-container">
+            <h1 class="article__title-header"><%= article.title %></h1>
+        </div>
+        <div class="article__body-container">
+            <div class="article__imageRating">
+                <div class="article__image-container">
+                    <img class="article__image" src="<%= article.thumbnail %>" alt="">
+                </div>
+                <div class="article__rating-icons">
+                    <form action="/viewArticle/<%= article_id %>/like" method="POST">
+                        <button type='submit' id="article__rating-icon"><i class="fa fa-heart"></i></button>
+                    </form>
+                </div>
+            </div>
+                <div class="article__descriptionUrl">
+                <div class="article__description-container">
+                    <h4 class="article__description"><%= article.description %>
+                    </h4>
+                </div>
+                <div class="article__url-container">
+                    <a class="article__url" href="<%= article.url %>">View Article</a>
+                </div>
+            </div>
+        </div>
+        <div class="article__comment-container">
+          <button class="article__comments-button">
+            <span class="article__submission-text">Comments</span>
+          </button>
+          <section class="article__comments-container">
+            <div class="article__error-message"></div>
+            <form method="POST" action="/viewArticle/<%= article.id %>" class="article__comments-form">
+                <textarea class="article__comment" rows= "1" name="text" placeholder="What are you humming about?"></textarea>
+                <input class="article__comment--submission" type="submit" value="Post">
+            </form>
+          </section>
+        </div>
+    </article>
+    <div class="review-container">
+      <% for(commentObject of article.allComments) { %>
+        <article class="review">
+          <header class="review-header">
+            <img class="review-img" src="./images/profile-hex.png" alt="">
+            <h4 class= "review-username"></h4>
+          </header>
+          <span class="review-body"><%= commentObject.comment %></span>
+        </article>
+        <% } %>
+      </div>
+    </div>
+</body>
+</div>
+</html>
